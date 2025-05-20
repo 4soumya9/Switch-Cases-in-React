@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import CustomSwitch, {
-  CustomCase,
-  DefaultCase,
-} from "./components/CustomSwitch";
+import { CustomCase, DefaultCase } from "./components/CustomSwitchWithBreak";
+import CustomSwitchWithBreak from "./components/CustomSwitchWithBreak";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -17,7 +15,7 @@ function App() {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter the no"
         />
-        <CustomSwitch value={inputValue}>
+        <CustomSwitchWithBreak value={inputValue}>
           <CustomCase value="10">
             <div>Case for 10</div>
           </CustomCase>
@@ -30,7 +28,7 @@ function App() {
           <DefaultCase>
             <div>Default : No Match</div>
           </DefaultCase>
-        </CustomSwitch>
+        </CustomSwitchWithBreak>
       </div>
     </>
   );
